@@ -11,7 +11,7 @@ import org.eclipse.microprofile.config.inject.ConfigProperty;
 @Path("/")
 public class GreetingResource {
 
-    @ConfigProperty(name = "application.message", defaultValue = "Hello from Akatsuki")
+    @ConfigProperty(name = "application.message")
     String message;
 
     @ConfigProperty(name = "quarkus.application.name")

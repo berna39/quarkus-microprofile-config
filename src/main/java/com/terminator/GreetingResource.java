@@ -17,6 +17,12 @@ public class GreetingResource {
     @ConfigProperty(name = "quarkus.application.name")
     String appName;
 
+    @ConfigProperty(name = "callable.url")
+    String callableURL;
+
+    @ConfigProperty(name = "testing.myname")
+    String myName;
+
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
@@ -45,5 +51,17 @@ public class GreetingResource {
                 .orElse("Optional message");
         String message = String.format("message: %s", value);
         return message;
+    }
+
+    @GET
+    @Path("/callable")
+    public String getCallableURL(){
+        return callableURL;
+    }
+
+    @GET
+    @Path("/my-name")
+    public String getMyName(){
+        return myName;
     }
 }
